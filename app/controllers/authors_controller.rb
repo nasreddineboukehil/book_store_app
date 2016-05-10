@@ -4,4 +4,9 @@ class AuthorsController < ApplicationController
 
   end
 
+  def show
+    #require 'pry'; binding.pry
+    @author = Author.find(params[:id])
+  end
+
 end
