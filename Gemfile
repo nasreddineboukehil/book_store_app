@@ -56,4 +56,5 @@ end
 group :test do
   gem 'capybara', '2.4.4'
   gem 'faker', '~> 1.6', '>= 1.6.3'
+  gem 'shoulda-matchers', '~> 3.1', '>= 3.1.1', require: false
 end
