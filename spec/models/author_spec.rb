@@ -22,4 +22,6 @@ RSpec.describe Author, :type => :model do
     end
   end
 
+  it { should have_many(:publications) }
+  it { should have_many(:books).through(:publications) }
 end
