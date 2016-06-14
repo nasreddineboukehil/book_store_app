@@ -11,15 +11,20 @@ class BooksController < ApplicationController
 
   def new
     @book = Book.new
+
+    @publishers = Publisher.all
+    @authors = Author.all
   end
 
   def create
     @book = Book.new(book_params)
     if @book.save
-      flash[:success] = 'Book has been created'
+      flash[:success] = 'Book has been created.'
       redirect_to @book
     else
-      flash[:danger] = "Book has not been created"
+      flash[:danger] = 'Book has not been created.'
+      @publishers = Publisher.all
+      @authors = Author.all
       render :new
     end
   end

@@ -82,7 +82,8 @@ RSpec.describe BooksController, :type => :controller do
 
     context "a successful update" do
       before do
-        put :update, book: Fabricate.attributes_for(:book, title: 'Updated title', id: book.id)
+        # put :update, book: Fabricate.attributes_for(:book, title: 'Updated title', id: book.id)
+        put :update, book: Fabricate.attributes_for(:book, title: 'Updated title'), id: book.id
       end
 
       it "updates the modified book object" do
