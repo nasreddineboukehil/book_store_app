@@ -1,1 +1,10 @@
-<%= link_to "Add new book", new_book_path %>
+<div class="col-md-6">
+  <% @books.each do |book| %>
+      <p class='book-title'>
+        <%= link_to book.title, book_path(book) %><br>
+        <span class='price-class'><%= number_to_currency(book.price) %></span>
+      </p>
+  <% end %>
+    <br>
+    <p><%= link_to 'Add new book', new_book_path, class: 'btn btn-primary' %></p>
+</div>

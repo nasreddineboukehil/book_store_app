@@ -18,12 +18,13 @@ RSpec.feature "creating Books" do
     fill_in 'Description', with: 'learn JS the easy way'
     fill_in 'Published at', with: '2014-01-01'
     select 'Peachpit Press', from: 'Publisher'
+    attach_file 'Book cover', 'app/assets/images/itext.jpg'
     check author1.full_name
     check author2.full_name
 
     click_button 'Create Book'
 
-    expect(page).to have_content('Book has not been created.')
+    expect(page).to have_content('Book has been created.')
     expect(page).to have_content("can't be blank")
   end
 end
